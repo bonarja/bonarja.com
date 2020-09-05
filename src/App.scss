@@ -1,0 +1,35 @@
+.test h1,
+.test2 h1 {
+    animation-name: zoomOut;
+}
+.zoomIn {
+    animation-name: zoomIn !important;
+}
+.bonarja {
+    position: relative;
+    // overflow: hidden;
+    &.finishIntro {
+        overflow-y: auto;
+    }
+}
+.bonarja .tween {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 0 !important;
+    position: relative;
+    left: calc(50% - 50px);
+}
+#trigger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+    z-index: 9999;
+    // pointer-events: none;
+}
+.Content {
+    height: 1200px;
+    width: 100%;
+    background-color: #28292f;
+}
