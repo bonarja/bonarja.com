@@ -1,0 +1,34 @@
+.Glitch {
+    position: relative;
+    user-select: none;
+    pointer-events: none;
+    img {
+        width: 100%;
+    }
+    .wrapImage,
+    .wrapImageBase {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+    .baseImage {
+        z-index: 1;
+    }
+    .wrapImage {
+        animation-iteration-count: infinite;
+        animation-duration: 150ms;
+        animation-fill-mode: forwards;
+        opacity: 0;
+    }
+    .wrapImageBase {
+        animation-iteration-count: infinite;
+        animation-duration: 200ms;
+        animation-fill-mode: forwards;
+    }
+}

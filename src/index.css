@@ -1,13 +1,57 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: foundersGrotesk;
+    src: url(/fonts/founders-grotesk-web-regular.woff);
+    font-weight: 100;
+}
+@font-face {
+    font-family: foundersGrotesk;
+    src: url(/fonts/founders-grotesk-web-medium.woff);
+    font-weight: 400;
+}
+@font-face {
+    font-family: foundersGrotesk;
+    src: url(/fonts/founders-grotesk-web-semibold.woff);
+    font-weight: bold;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    overflow: hidden;
+    margin: 0;
+    background-color: #28292f;
+}
+div {
+    display: block;
+}
+* {
+    font-family: sans-serif;
+    box-sizing: content-box;
+}
+.cover {
+    width: 100%;
+    height: 100%;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center.y {
+    flex-direction: column;
+}
+.flexList {
+    font-display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+#root {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
