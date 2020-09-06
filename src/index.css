@@ -29,7 +29,7 @@ div {
 }
 * {
     font-family: sans-serif;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 .cover {
     width: 100%;

@@ -36,12 +36,12 @@ const Glitch = ({
         }
     };
     useEffect(() => {
-        setInterval(() => {
-            $active.set("active");
-            setTimeout(() => {
-                $active.set("");
-            }, time);
-        }, interval);
+        // setInterval(() => {
+        //     $active.set("active");
+        //     setTimeout(() => {
+        //         $active.set("");
+        //     }, time);
+        // }, interval);
     }, []);
 
     return (

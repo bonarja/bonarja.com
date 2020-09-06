@@ -1,0 +1,85 @@
+$time: 300ms;
+$menu_width: 160px;
+#app {
+    width: 100%;
+    height: 100%;
+    background: cornflowerblue;
+    position: relative;
+    // overflow: hidden;
+    border-radius: 4px;
+    #menu_btn {
+        cursor: pointer;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        font-size: 1.3em;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 4px;
+        left: 15px;
+        top: 15px;
+        z-index: 9999;
+        div {
+            transition: all ease $time;
+            margin: 0;
+            height: 2px;
+            width: 100%;
+            background: #002149;
+        }
+    }
+    #menu {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: white;
+        height: 100%;
+        padding-top: 50px;
+        width: $menu_width;
+        user-select: none;
+        cursor: pointer;
+        p {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    #content {
+        background: white;
+        padding: 20px;
+        padding-top: 45px;
+        position: absolute;
+        // overflow: hidden;
+        // overflow-y: auto;
+        border-radius: 4px;
+        left: 0;
+        top: 0;
+        box-shadow: -14px 3px 21px rgba(0, 0, 0, 0.16);
+        transition: all ease $time;
+        #header {
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        img {
+            border-radius: 4px;
+            width: 100%;
+            transition: all ease 200ms;
+        }
+    }
+    &.menu_open {
+        #content {
+            left: $menu_width;
+            transform: scale(0.85);
+            border-radius: 4px;
+        }
+        #menu_btn {
+            div {
+                background: white;
+            }
+        }
+    }
+}
