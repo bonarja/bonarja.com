@@ -28,7 +28,7 @@ div {
     display: block;
 }
 * {
-    font-family: sans-serif;
+    font-family: foundersGrotesk, sans-serif;
     box-sizing: border-box;
 }
 .cover {

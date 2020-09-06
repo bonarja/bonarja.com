@@ -11,7 +11,6 @@ import Intro from "./componets/introVideo";
 import StateController from "./modules/stateController";
 import Uiux from "./sections/uiux";
 import Me from "./sections/me";
-import Glitch from "./componets/glitch";
 
 const App = () => {
     const $hero = useRef();
@@ -20,33 +19,14 @@ const App = () => {
         ShowIntroVideo.set(false);
         $hero.current.active();
     };
-    return (
-        <Glitch
-            img={"https://wallpapershome.com/images/pages/pic_h/241.jpg"}
-            layers={2}
-            variation1={1.8}
-            variation2={3}
-            skew={false}
-            width={"100%"}
-        ></Glitch>
-    );
+    // return <Loader></Loader>;
     return (
         <div className="bonarja cover finishIntro">
             {ShowIntroVideo.get ? <Intro onFinish={onFinishVid}></Intro> : ""}
             <Hero ref={$hero}></Hero>
             <div className="Content">
-                <Glitch
-                    img={
-                        "https://wallpapershome.com/images/pages/pic_h/241.jpg"
-                    }
-                    layers={10}
-                    variation1={1.8}
-                    variation2={3}
-                    skew={false}
-                    width={"100%"}
-                ></Glitch>
-                {/* <Me></Me>
-                <Uiux></Uiux> */}
+                <Me></Me>
+                <Uiux></Uiux>
             </div>
         </div>
     );

@@ -24,7 +24,7 @@ const Glitch = ({
         if (filter === true) {
             return `hue-rotate(${Math.floor(
                 Math.random() * 250
-            )}) brightness(${brightness})`;
+            )}deg) brightness(${brightness})`;
         } else if (typeof filter === "string") {
             return filter
                 .replace(/\$250/g, Math.floor(Math.random() * 250))
@@ -36,12 +36,12 @@ const Glitch = ({
         }
     };
     useEffect(() => {
-        // setInterval(() => {
-        //     $active.set("active");
-        //     setTimeout(() => {
-        //         $active.set("");
-        //     }, time);
-        // }, interval);
+        setInterval(() => {
+            $active.set("active");
+            setTimeout(() => {
+                $active.set("");
+            }, time);
+        }, interval);
     }, []);
 
     return (
@@ -60,14 +60,14 @@ const Glitch = ({
                         className={`wrapImage`}
                         style={{
                             height: `${prom}%`,
-                            marginTop: `${prom * i}%`,
+                            top: `${prom * i}%`,
                         }}
                     >
                         <img
                             src={img}
                             style={{
                                 filter: filter ? getFilter(i) : "",
-                                marginTop: `-${prom * i}%`,
+                                top: `-${100 * i}%`,
                                 transform: `skewY(${
                                     skew ? Math.floor(Math.random() * 45) : 0
                                 }deg)`,
@@ -85,13 +85,13 @@ const Glitch = ({
                         className={`wrapImageBase`}
                         style={{
                             height: `${prom}%`,
-                            marginTop: `${prom * i}%`,
+                            top: `${prom * i}%`,
                         }}
                     >
                         <img
                             src={img}
                             style={{
-                                marginTop: `-${prom * i}%`,
+                                top: `-${100 * i}%`,
                             }}
                         />
                     </div>
