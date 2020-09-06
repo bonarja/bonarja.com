@@ -61,8 +61,8 @@ const Me = () => {
                         <p>JavaScript</p>
                         {"</span>"}
                     </span>
-                    , me apasiona el diseño de interfaces, la animación y
-                    aprender tanto como pueda.
+                    , me apasiona el diseño de interfaces, la animación,
+                    aprender y crear cosas nuevas.
                 </p>
                 <label>{"</script>"}</label>
             </div>

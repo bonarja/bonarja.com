@@ -117,7 +117,6 @@ const Hero = forwardRef((props, ref) => {
                             width="30"
                             finishInterval={0.2}
                             onFinish={() => $line3.current.active()}
-                            textColor="white"
                             left="8"
                             lineColor="#ff9c07"
                             textColor="#ff9c07"
