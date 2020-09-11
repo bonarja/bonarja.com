@@ -42,7 +42,9 @@ $menu_width: 160px;
         cursor: pointer;
         p {
             width: 100%;
-            text-align: center;
+            padding-left: 30px;
+            color: white !important;
+            letter-spacing: 0.08em;
         }
     }
     #content {
@@ -64,10 +66,25 @@ $menu_width: 160px;
             left: 0;
             top: 0;
         }
+        .image {
+            width: 210px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 4px;
+            div {
+                background-size: cover;
+                background-position: center;
+            }
+        }
         img {
             border-radius: 4px;
             width: 100%;
             transition: all ease 200ms;
+        }
+        p {
+            color: rgb(60, 60, 60);
+            font-size: 2em;
+            font-weight: bold;
         }
     }
     &.menu_open {

@@ -55,3 +55,6 @@ div {
     height: 100%;
     position: relative;
 }
+.Transition {
+    transition: all ease 200ms;
+}

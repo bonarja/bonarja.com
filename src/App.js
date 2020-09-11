@@ -11,6 +11,7 @@ import Intro from "./componets/introVideo";
 import StateController from "./modules/stateController";
 import Uiux from "./sections/uiux";
 import Me from "./sections/me";
+import Skills from "./sections/skills";
 
 const App = () => {
     const $hero = useRef();
@@ -27,6 +28,8 @@ const App = () => {
             <div className="Content">
                 <Me></Me>
                 <Uiux></Uiux>
+                <Skills></Skills>
+                <div className="cover"></div>
             </div>
         </div>
     );

@@ -1,7 +1,9 @@
 import React from "react";
 import css from "./me.module.scss";
-import Picture from "../assets/me.jpg";
+import Picture from "../assets/illustration3.png";
 import Glitch from "../componets/glitch";
+import { Controller, Scene } from "react-scrollmagic";
+import { Tween } from "react-gsap";
 const Me = () => {
     const getAge = (dateString) => {
         var today = new Date();
@@ -13,6 +15,102 @@ const Me = () => {
         }
         return age;
     };
+
+    return (
+        <div className={`${css.Me} Me`}>
+            <Controller>
+                <Scene
+                    triggerElement=".Me"
+                    duration={"90%"}
+                    pin={false}
+                    offset={"-100%"}
+                    // triggerHook={"-300%"}
+                >
+                    {(progress) => (
+                        <Tween
+                            from={{
+                                css: {
+                                    marginTop: 0,
+                                },
+                                ease: "Strong.easeOut",
+                            }}
+                            to={{
+                                css: {
+                                    marginTop: "20%",
+                                },
+                                ease: "Strong.easeOut",
+                            }}
+                            totalProgress={progress}
+                            paused
+                        >
+                            <div className={`${css.info} cover Transition`}>
+                                <div className={`${css.g1}`}>
+                                    <div style={{ position: "absolute" }}>
+                                        <h1>sobre mi</h1>
+                                        <p>
+                                            Profesionalmente conectado con la
+                                            industria del desarrollo web y la
+                                            tecnología durante muchos años.
+                                        </p>
+                                        <p>
+                                            Organizado, solucionado de problemas
+                                            con gran atención a los detalles.
+                                            Fanático de javascript, la
+                                            fotografía y la producción
+                                            audiovisual.
+                                        </p>
+                                        <p>
+                                            Interesado en todo el espectro del
+                                            frontend y trabajar en proyectos
+                                            ambiciosos con gente positiva.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className={`${css.g2} center`}>
+                                    <Tween
+                                        from={{
+                                            css: {
+                                                opacity: 0,
+                                                transform: "scale(0.5)",
+                                            },
+                                            ease: "Strong.easeOut",
+                                        }}
+                                        to={{
+                                            css: {
+                                                opacity: 1,
+                                                transform: "scale(1)",
+                                            },
+                                            ease: "Strong.easeOut",
+                                        }}
+                                        totalProgress={progress}
+                                        paused
+                                    >
+                                        <div className="Transition">
+                                            <Glitch
+                                                img={Picture}
+                                                layers={10}
+                                                variation1={1.8}
+                                                variation2={3}
+                                                skew={false}
+                                                width={"100%"}
+                                                inside={true}
+                                                interval={4000}
+                                                opacity={0.4}
+                                                filter={
+                                                    "invert(100%) sepia() saturate(100%) hue-rotate($200deg) brightness(1)"
+                                                }
+                                            ></Glitch>
+                                        </div>
+                                    </Tween>
+                                </div>
+                            </div>
+                        </Tween>
+                    )}
+                </Scene>
+            </Controller>
+        </div>
+    );
+
     return (
         <div className={`${css.Me} Me`}>
             <div className={`${css.group}`}>
@@ -55,14 +153,10 @@ const Me = () => {
                 <br />
                 <p style={{ paddingLeft: 40, margin: "10px 0" }}>
                     Poseo mas de 6 años de experiencia en programación y
-                    desarrollo web con mayor enfoque a{" "}
-                    <span>
-                        {"<span>"}
-                        <p>JavaScript</p>
-                        {"</span>"}
-                    </span>
-                    , me apasiona el diseño de interfaces, la animación,
-                    aprender y crear cosas nuevas.
+                    desarrollo web con mayor enfoque a <span>{"<span>"} </span>
+                    JavaScript
+                    <span> {"</span>"}</span>, me apasiona el diseño de
+                    interfaces, la animación, aprender y crear cosas nuevas.
                 </p>
                 <label>{"</script>"}</label>
             </div>

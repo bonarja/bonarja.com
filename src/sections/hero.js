@@ -2,7 +2,7 @@ import React, { useImperativeHandle, forwardRef, useRef } from "react";
 import css from "./hero.module.scss";
 import LineWord from "../componets/lineword";
 
-import HeroVid from "../assets/hero.mp4";
+import HeroVid from "../assets/hero3.mp4";
 import Sfx from "../assets/sfx.mp3";
 import StateController from "../modules/stateController";
 import { Controller, Scene } from "react-scrollmagic";
@@ -12,6 +12,7 @@ const Hero = forwardRef((props, ref) => {
     const $line1 = useRef();
     const $line2 = useRef();
     const $line3 = useRef();
+    const $line4 = useRef();
     const $video = useRef();
     const $audio = useRef();
     const $letter = useRef();
@@ -27,7 +28,7 @@ const Hero = forwardRef((props, ref) => {
         if (!$letter.current) return;
         // console.log($letter.current);
         $letter.current.style.marginTop = `-${300 * progress}px`;
-        $letter.current.style.marginLeft = `-${300 * progress}px`;
+        // $letter.current.style.marginLeft = `-${300 * progress}px`;
     };
 
     useImperativeHandle(ref, () => ({
@@ -109,25 +110,37 @@ const Hero = forwardRef((props, ref) => {
                             textColor="white"
                             left="10"
                             lineColor="white"
+                            size="12"
                             onPlay={playLineFx}
                         ></LineWord>
                         <LineWord
-                            text="i am"
+                            text="i'm kleyber"
                             ref={$line2}
-                            width="30"
+                            width="70"
                             finishInterval={0.2}
                             onFinish={() => $line3.current.active()}
-                            left="8"
+                            left={0}
                             lineColor="#ff9c07"
                             textColor="#ff9c07"
                         ></LineWord>
                         <LineWord
-                            text="kleyber"
+                            text="fullstack"
                             ref={$line3}
-                            width="55"
+                            width="80"
                             textColor="#d4826f"
                             lineColor="#d4826f"
                             size="12"
+                            left={2}
+                            finishInterval={0.2}
+                            onFinish={() => $line4.current.active()}
+                        ></LineWord>
+                        <LineWord
+                            text="developer"
+                            ref={$line4}
+                            width={55}
+                            textColor="#949AB3"
+                            lineColor="#949AB3"
+                            size="6"
                             left="10"
                         ></LineWord>
                     </div>

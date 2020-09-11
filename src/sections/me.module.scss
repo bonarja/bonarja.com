@@ -1,77 +1,39 @@
 .Me {
     width: 100%;
+    // min-height: 70%;
     padding: 90px 30px;
-
-    .group {
+    // background-color: #1d1d1d;
+    justify-content: flex-start;
+    .info {
         display: grid;
-        grid-template-columns: 50% 50%;
-        .info {
-            padding: 0 50px;
-            opacity: 0.7;
-            .name {
-                p {
-                    color: white;
-                    font-family: foundersGrotesk;
-                    font-weight: 400;
-                    font-size: 3em;
-                    letter-spacing: 0.03em;
-                    position: relative;
-                    margin: 0;
-                    text-transform: uppercase;
-                    span {
-                        color: #ffa547;
-                        font-family: foundersGrotesk;
-                        font-weight: bold;
-                    }
-                    &.point {
-                        &:after {
-                            content: ".";
-                            position: absolute;
-                            font-family: sans-serif;
-                            transform: scale(2);
-                            bottom: 18px;
-                            color: #ffa547;
-                            margin-left: 10px;
-                        }
-                    }
-                }
-            }
-            .ing {
-                color: white;
-                font-weight: 100;
-                font-size: 1.4em;
-                letter-spacing: 0.04em;
-                span {
-                    color: #ffa547;
-                }
+        grid-template-columns: 60% auto;
+        color: #e0e0e0;
+        h1 {
+            font-size: 4em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            // color: #d4826f;
+            position: relative;
+            &:after {
+                content: ".";
+                position: absolute;
+                font-family: sans-serif;
+                transform: scale(2);
+                bottom: 0.32em;
+                color: #d4826f;
+                margin-left: 0.2em;
             }
         }
-    }
-    .details {
-        color: white;
-        opacity: 0.7;
-        width: 80%;
-        max-width: 800px;
-        margin: auto;
-        margin-top: 80px;
-        font-size: 1.6em;
         p {
+            font-weight: 100;
+            font-size: 1.3em;
         }
-        span {
-            font-family: monospace, sans-serif;
-            color: #a5fda7;
-            p {
-                display: inline;
-                color: white;
-                margin: 0 10px;
-            }
+        .g1 {
+            position: relative;
         }
-        label {
-            color: #ff4747;
-            font-family: monospace, sans-serif;
-            // animation-name: changeText;
-            // animation-iteration-count: infinite;
-            // animation-duration: 400ms;
+        .g2 {
+            overflow: hidden;
         }
     }
 }

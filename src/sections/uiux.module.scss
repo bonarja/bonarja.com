@@ -1,19 +1,17 @@
 .Uiux {
     display: grid;
     grid-template-columns: 55% auto;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding: 90px 30px;
     overflow: hidden;
     .info {
         padding: 20px;
         align-items: flex-start;
-        .title {
-            color: white;
-            font-family: foundersGrotesk;
-            font-weight: bold;
-            font-size: 3em;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        h1 {
+            color: #ff9c07;
+        }
+        p {
+            font-weight: 100;
+            font-size: 1.3em;
         }
     }
     .interface {
