@@ -46,7 +46,7 @@ const Skills = () => {
                     duration={Duration}
                     offset={0}
                     triggerHook={0}
-                    indicators={true}
+                    // indicators={true}
                     classToggle={css.active}
                 >
                     {(progress) => (

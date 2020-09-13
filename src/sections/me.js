@@ -67,41 +67,58 @@ const Me = () => {
                                     </div>
                                 </div>
                                 <div className={`${css.g2} center`}>
-                                    <Tween
-                                        from={{
-                                            css: {
-                                                opacity: 0,
-                                                transform: "scale(0.5)",
-                                            },
-                                            ease: "Strong.easeOut",
-                                        }}
-                                        to={{
-                                            css: {
-                                                opacity: 1,
-                                                transform: "scale(1)",
-                                            },
-                                            ease: "Strong.easeOut",
-                                        }}
-                                        totalProgress={progress}
-                                        paused
-                                    >
-                                        <div className="Transition">
-                                            <Glitch
-                                                img={Picture}
-                                                layers={10}
-                                                variation1={1.8}
-                                                variation2={3}
-                                                skew={false}
-                                                width={"100%"}
-                                                inside={true}
-                                                interval={4000}
-                                                opacity={0.4}
-                                                filter={
-                                                    "invert(100%) sepia() saturate(100%) hue-rotate($200deg) brightness(1)"
-                                                }
-                                            ></Glitch>
-                                        </div>
-                                    </Tween>
+                                    <Controller>
+                                        <Scene
+                                            triggerElement="#IllustrationMe"
+                                            duration={"90%"}
+                                            pin={false}
+                                            // indicators={true}
+                                            triggerHook={0.8}
+                                        >
+                                            {(prog) => (
+                                                <Tween
+                                                    from={{
+                                                        css: {
+                                                            opacity: 0,
+                                                            transform:
+                                                                "scale(0.5) rotate3d(9, 64, -5, -36deg)",
+                                                        },
+                                                        // ease: "Strong.easeOut",
+                                                    }}
+                                                    to={{
+                                                        css: {
+                                                            opacity: 1,
+                                                            transform:
+                                                                "scale(1) rotate3d(0, 0, 0, 0)",
+                                                        },
+                                                        // ease: "Strong.easeOut",
+                                                    }}
+                                                    totalProgress={prog}
+                                                    paused
+                                                >
+                                                    <div
+                                                        id="IllustrationMe"
+                                                        className="Transition"
+                                                    >
+                                                        <Glitch
+                                                            img={Picture}
+                                                            layers={10}
+                                                            variation1={1.8}
+                                                            variation2={3}
+                                                            skew={false}
+                                                            width={"100%"}
+                                                            inside={true}
+                                                            interval={4000}
+                                                            opacity={0.4}
+                                                            filter={
+                                                                "invert(100%) sepia() saturate(100%) hue-rotate($200deg) brightness(1)"
+                                                            }
+                                                        ></Glitch>
+                                                    </div>
+                                                </Tween>
+                                            )}
+                                        </Scene>
+                                    </Controller>
                                 </div>
                             </div>
                         </Tween>
