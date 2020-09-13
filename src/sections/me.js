@@ -17,7 +17,7 @@ const Me = () => {
     };
 
     return (
-        <div className={`${css.Me} Me`}>
+        <div className={`${css.Me} Me Section`}>
             <Controller>
                 <Scene
                     triggerElement=".Me"
@@ -32,20 +32,20 @@ const Me = () => {
                                 css: {
                                     marginTop: 0,
                                 },
-                                ease: "Strong.easeOut",
+                                // ease: "Strong.easeOut",
                             }}
                             to={{
                                 css: {
                                     marginTop: "20%",
                                 },
-                                ease: "Strong.easeOut",
+                                // ease: "Strong.easeOut",
                             }}
                             totalProgress={progress}
                             paused
                         >
                             <div className={`${css.info} cover Transition`}>
                                 <div className={`${css.g1}`}>
-                                    <div style={{ position: "absolute" }}>
+                                    <div>
                                         <h1>sobre mi</h1>
                                         <p>
                                             Profesionalmente conectado con la

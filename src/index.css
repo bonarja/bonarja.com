@@ -58,3 +58,16 @@ div {
 .Transition {
     transition: all ease 200ms;
 }
+.Section {
+    max-width: 1600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 3em;
+    }
+    .Section {
+    }
+}

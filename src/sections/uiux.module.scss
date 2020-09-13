@@ -1,8 +1,10 @@
 .Uiux {
-    display: grid;
-    grid-template-columns: 55% auto;
     padding: 90px 30px;
     overflow: hidden;
+    .wrapUiux {
+        display: grid;
+        grid-template-columns: 55% auto;
+    }
     .info {
         padding: 20px;
         align-items: flex-start;
@@ -36,6 +38,15 @@
                     background-color: #4968af;
                 }
             }
+        }
+    }
+    @media screen and (max-width: 900px) {
+        .wrapUiux {
+            grid-template-columns: 100%;
+            grid-template-rows: min-content min-content;
+        }
+        .interface {
+            // transform: scale(0.6) translateY(-250px) translateX(40%);
         }
     }
 }

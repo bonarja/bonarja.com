@@ -55,4 +55,25 @@
             transform: scale(1);
         }
     }
+    // transform: rotate3d(9, 64, -5, -16deg);
+    @media screen and (max-width: 900px) {
+        .Skills {
+            grid-template-columns: 100%;
+            grid-template-rows: min-content 300px;
+            padding-left: 0;
+            padding-top: 0;
+            .item {
+                zoom: 0.5;
+            }
+            .collage2 {
+                left: 120px !important;
+            }
+            .g1 {
+                grid-row-start: 2;
+            }
+            .g2 {
+                grid-row-start: 1;
+            }
+        }
+    }
 }

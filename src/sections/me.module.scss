@@ -34,6 +34,17 @@
         }
         .g2 {
             overflow: hidden;
+            padding: 30px;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        .info {
+            grid-template-columns: 100%;
+            grid-template-rows: min-content min-content;
+            .g2 {
+                width: 350px;
+                margin-left: auto;
+            }
         }
     }
 }

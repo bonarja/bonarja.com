@@ -36,7 +36,7 @@ const Duration = 2000;
 const Skills = () => {
     return (
         <div
-            className={`${css.WrapSkills} WrapSkills Transition`}
+            className={`${css.WrapSkills} WrapSkills Transition Section`}
             style={{ height: Duration }}
         >
             <Controller>
@@ -46,7 +46,7 @@ const Skills = () => {
                     duration={Duration}
                     offset={0}
                     triggerHook={0}
-                    // indicators={true}
+                    indicators={true}
                     classToggle={css.active}
                 >
                     {(progress) => (
@@ -108,7 +108,7 @@ const Skills = () => {
                                     paused
                                 >
                                     <div
-                                        className={`${css.collage} Transition`}
+                                        className={`${css.collage} ${css.collage2} Transition`}
                                         style={{ left: 160 + 40 }}
                                     >
                                         {list2.map((x, i) => (
