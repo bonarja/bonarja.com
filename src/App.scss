@@ -5,11 +5,49 @@
 .zoomIn {
     animation-name: zoomIn !important;
 }
-.bonarja {
-    position: relative;
-    // overflow: hidden;
-    &.finishIntro {
-        overflow-y: auto;
+.btnMenu {
+    $size: 40px;
+    width: $size;
+    height: $size;
+    cursor: pointer;
+    user-select: none;
+    position: fixed;
+    right: 32px;
+    top: 18px;
+    z-index: 9999;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: rgba(40, 41, 47, 0.39);
+    transition: all ease 250ms;
+    &:active {
+        transform: scale(0.9);
+    }
+    div {
+        height: 3px;
+        width: 100%;
+        background-color: white;
+    }
+}
+.MainWrap {
+    background-color: white;
+    .bonarja {
+        box-shadow: 4px 2px 46px -1px rgba(0, 0, 0, 0.39);
+        background-color: #28292f;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: all ease 300ms;
+        &.finishIntro {
+            overflow-y: auto;
+        }
+    }
+    &.openMenu {
+        .bonarja {
+            right: 50%;
+            transform: scale(0.9);
+            overflow: hidden;
+            border-radius: 8px;
+        }
     }
 }
 .bonarja .tween {
@@ -44,7 +82,58 @@ h1 {
 p {
     color: #e0e0e0;
 }
-
-// .Me .Glitch {
-//     box-shadow: 0 7px 20px -1px rgba(0, 0, 0, 0.58);
-// }
+@media screen and (max-width: 1170px) {
+    .MainWrap {
+        &.openMenu {
+            .bonarja {
+                right: 70%;
+            }
+        }
+        .Menu {
+            width: 70%;
+            .TextBackground {
+                left: 0 !important;
+                top: 80px !important;
+                p {
+                    font-size: 5em;
+                }
+            }
+            .menuItem {
+                p {
+                    font-size: 2.5em !important;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 750px) {
+    .MainWrap {
+        &.openMenu {
+            .bonarja {
+                // right: 80%;
+            }
+        }
+        .Menu {
+            .TextBackground {
+                left: 0 !important;
+                top: 150px !important;
+                p {
+                    font-size: 3.5em;
+                }
+            }
+            // width: 80%;
+            // .TextBackground
+            //     left: 0 !important;
+            //     top: 80px !important;
+            //     p {
+            //         font-size: 5em;
+            //     }
+            // }
+            .menuItem {
+                p {
+                    font-size: 1.8em !important;
+                }
+            }
+        }
+    }
+}

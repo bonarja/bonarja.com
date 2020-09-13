@@ -33,6 +33,17 @@
                 animation-name: zoomHeroWallpaper;
             }
         }
+        .image {
+            background-size: cover;
+            background-position: center;
+            animation-duration: 2500ms;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            // background-attachment: fixed;
+            &.activeIntro {
+                animation-name: zoomHeroWallpaperImage;
+            }
+        }
     }
     .content {
         position: absolute;
@@ -42,6 +53,21 @@
         .letter {
             transition: all ease 200ms;
         }
+        @media screen and (min-width: 1300px) {
+            .letter {
+                transform: scale(0.7);
+                margin-left: -160px;
+                padding-bottom: 200px !important;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            .letter {
+                margin-left: 30px;
+                // transform: scale(0.7);
+                // margin-left: -160px;
+                // padding-bottom: 200px !important;
+            }
+        }
     }
 }
 @keyframes zoomHeroWallpaper {
@@ -50,5 +76,13 @@
     }
     to {
         transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+}
+@keyframes zoomHeroWallpaperImage {
+    from {
+        transform: scale(1.4);
+    }
+    to {
+        transform: scale(1);
     }
 }

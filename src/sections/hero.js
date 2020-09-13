@@ -2,13 +2,16 @@ import React, { useImperativeHandle, forwardRef, useRef } from "react";
 import css from "./hero.module.scss";
 import LineWord from "../componets/lineword";
 
-import HeroVid from "../assets/hero3.mp4";
-import Sfx from "../assets/sfx.mp3";
 import StateController from "../modules/stateController";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween } from "react-gsap";
+import { IsMobile } from "../modules/utility";
+
+import { Resources } from "../modules/prelaod";
 
 const Hero = forwardRef((props, ref) => {
+    const isMobile = IsMobile();
+
     const $line1 = useRef();
     const $line2 = useRef();
     const $line3 = useRef();
@@ -34,7 +37,7 @@ const Hero = forwardRef((props, ref) => {
     useImperativeHandle(ref, () => ({
         active() {
             $line1.current.active();
-            $video.current.play();
+            !isMobile && $video.current.play();
             ActiveIntro.set(css.activeIntro);
         },
     }));
@@ -68,14 +71,30 @@ const Hero = forwardRef((props, ref) => {
                         >
                             <div className={`${css.wallpaper} cover wallpaper`}>
                                 <div className={`${css.layer} cover`}></div>
-                                <video
-                                    playsInline
-                                    loop={true}
-                                    ref={$video}
-                                    className={ActiveIntro.get}
-                                >
-                                    <source src={HeroVid}></source>
-                                </video>
+                                {!isMobile ? (
+                                    <video
+                                        playsInline
+                                        loop={true}
+                                        ref={$video}
+                                        className={ActiveIntro.get}
+                                    >
+                                        <source
+                                            src={Resources.heroVid}
+                                        ></source>
+                                    </video>
+                                ) : (
+                                    <div
+                                        className={`cover center`}
+                                        style={{ overflow: "hidden" }}
+                                    >
+                                        <div
+                                            className={`${css.image} ${ActiveIntro.get} cover`}
+                                            style={{
+                                                backgroundImage: `url(${Resources.heroImg})`,
+                                            }}
+                                        ></div>
+                                    </div>
+                                )}
                             </div>
                         </Tween>
                     )}
@@ -99,7 +118,7 @@ const Hero = forwardRef((props, ref) => {
                         ref={$letter}
                     >
                         <audio ref={$audio}>
-                            <source src={Sfx}></source>
+                            <source src={Resources.sfx}></source>
                         </audio>
                         <LineWord
                             text="Hi"

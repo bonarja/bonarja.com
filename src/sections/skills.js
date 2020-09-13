@@ -27,7 +27,7 @@ const list2 = [].concat(
     ...Array(5).fill([
         { name: "rethinkdb", color: "#4ac3b5", icon: iconRethink },
         { name: "influxdb", color: "#4a88c3", icon: iconInflux },
-        { name: "php", color: "#0083ff", icon: iconPhp },
+        { name: "php", color: "#8f9ed1", icon: iconPhp },
         { name: "ionic", color: "#4a88c3", icon: iconIonic },
         { name: "javascript", color: "#f0db4f", icon: iconJs, font: "black" },
     ])
@@ -144,12 +144,7 @@ const Skills = () => {
                                     incididunt ut labore et dolore magna aliqua.
                                     Ut enim ad minim veniam, quis nostrud
                                     exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat. Duis aute irure
-                                    dolor in reprehenderit in voluptate velit
-                                    esse cillum dolore eu fugiat nulla pariatur.
-                                    Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt
-                                    mollit anim id est laborum.
+                                    ex ea commodo consequat.
                                 </p>
                             </div>
                         </div>

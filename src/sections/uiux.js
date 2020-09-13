@@ -4,17 +4,10 @@ import "./uiux.phone.scss";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween } from "react-gsap";
 import StateController from "../modules/stateController";
-import wallpaperApp from "../assets/uiux.jpg";
+// import wallpaperApp from "../assets/uiux.jpg";
+import { Resources } from "../modules/prelaod";
 const Uiux = () => {
     const menuPhone = StateController(false);
-
-    const progressScrollPhone = (progress) => {
-        if (progress > 0.5) {
-            menuPhone.set(true);
-        } else {
-            menuPhone.set(false);
-        }
-    };
 
     return (
         <Controller>
@@ -162,7 +155,7 @@ const Uiux = () => {
                                                                         <div
                                                                             className="cover Transition"
                                                                             style={{
-                                                                                backgroundImage: `url(${wallpaperApp})`,
+                                                                                backgroundImage: `url(${Resources.wallpaperApp})`,
                                                                             }}
                                                                         ></div>
                                                                     </Tween>

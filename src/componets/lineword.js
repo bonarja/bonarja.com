@@ -65,7 +65,10 @@ const DrawText = forwardRef(
         }));
 
         return (
-            <div ref={$content} className={`cover center ${css.contentLetter}`}>
+            <div
+                ref={$content}
+                className={`LineWord cover center ${css.contentLetter}`}
+            >
                 {text
                     .toUpperCase()
                     .split("")

@@ -1,7 +1,9 @@
 .IntroVideo {
     position: absolute;
     z-index: 9999;
-    video {
+    overflow: hidden;
+    video,
+    .gif {
         position: absolute;
         z-index: 0;
         width: 100%;
