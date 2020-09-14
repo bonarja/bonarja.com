@@ -59,7 +59,7 @@ const App = () => {
                             <Skills></Skills>
                             <div className="cover center construction">
                                 <h1>
-                                    En <br></br> Contrucción
+                                    En <br></br> Construcción
                                 </h1>
                             </div>
                         </div>
