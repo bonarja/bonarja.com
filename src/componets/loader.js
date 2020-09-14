@@ -39,30 +39,34 @@ const Loader = ({ onEnter }) => {
         }
         Preload(data).then((r) => {
             loading.set(false);
-            console.log("finish");
             resoruces = r;
         });
     }, []);
 
     return (
         <div className={`${css.Loader} cover center y`}>
-            <Glitch
-                img={Logo}
-                width={250}
-                variation1={1.8}
-                variation2={3}
-                layers={6}
-                inside={false}
-                skew={false}
-                opacity={0.5}
-                filter={
-                    "invert(20%) sepia() saturate(100000%) hue-rotate($200deg) brightness(4)"
-                }
-            ></Glitch>
+            <div className="animated zoomIn">
+                <Glitch
+                    img={Logo}
+                    width={250}
+                    variation1={1.8}
+                    variation2={3}
+                    layers={6}
+                    inside={false}
+                    skew={false}
+                    opacity={0.5}
+                    filter={
+                        "invert(20%) sepia() saturate(100000%) hue-rotate($200deg) brightness(4)"
+                    }
+                ></Glitch>
+            </div>
             {loading.get ? (
                 <div className={css.title}>CARGANDO</div>
             ) : (
-                <div className={css.btn} onClick={() => onEnter(resoruces)}>
+                <div
+                    className={`${css.btn} animated zoomIn`}
+                    onClick={() => onEnter(resoruces)}
+                >
                     ENTRAR
                 </div>
             )}

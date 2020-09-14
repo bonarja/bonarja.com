@@ -53,9 +53,9 @@ const Me = () => {
                                             tecnología durante muchos años.
                                         </p>
                                         <p>
-                                            Organizado, solucionado de problemas
-                                            con gran atención a los detalles.
-                                            Fanático de javascript, la
+                                            Organizado, solucionador de
+                                            problemas con gran atención a los
+                                            detalles. Fanático de javascript, la
                                             fotografía y la producción
                                             audiovisual.
                                         </p>

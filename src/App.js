@@ -1,9 +1,5 @@
 import React, { useEffect, useRef } from "react";
-// import { Controller, Scene } from "scrollmagic";
-// import { TweenLite as Tween, TimelineMax as Timeline } from "gsap";
 
-import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
 import "./App.scss";
 import Hero from "./sections/hero";
 import Loader from "./componets/loader";
@@ -33,8 +29,11 @@ const App = () => {
         menuIsOpen = !menuIsOpen;
         $main.current[menuIsOpen ? "addClass" : "removeClass"]("openMenu");
     };
+    useEffect(() => {
+        //FIXME: TESTING
+        console.log("SITIO EN DESARROLLO | TESTING");
+    }, 4000);
 
-    // return ;
     return (
         <>
             {!ShowPage.get ? (
@@ -58,7 +57,11 @@ const App = () => {
                             <Me></Me>
                             <Uiux></Uiux>
                             <Skills></Skills>
-                            <div className="cover"></div>
+                            <div className="cover center construction">
+                                <h1>
+                                    En <br></br> Contrucción
+                                </h1>
+                            </div>
                         </div>
                     </div>
                 </div>

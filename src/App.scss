@@ -82,6 +82,19 @@ h1 {
 p {
     color: #e0e0e0;
 }
+.construction {
+    margin-top: 60%;
+    h1 {
+        font-size: 7vw;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    @media screen and (max-width: 1333px) {
+        h1 {
+            font-size: 6em;
+        }
+    }
+}
 @media screen and (max-width: 1170px) {
     .MainWrap {
         &.openMenu {
