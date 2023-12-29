@@ -22,7 +22,10 @@ export const Preload = () => {
   }, [])
 
   const { isLoading, done } = usePreload({ onLoad: onLoadResource })
+
   const customFilter = useMemo(() => {
+    if (typeof navigator === "undefined")
+      return "invert(20%) sepia() saturate(300%) hue-rotate(calc($150deg + 150deg)) contrast(2)"
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
     return isSafari
       ? "invert(20%) sepia() saturate(300%) hue-rotate(calc($150deg + 150deg)) contrast(2)"
