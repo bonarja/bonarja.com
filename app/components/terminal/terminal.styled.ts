@@ -11,6 +11,8 @@ export const TerminalStyled = styled.div`
   flex-direction: column;
   justify-content: end;
   user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   p {
     margin: 0;
     font-size: 13px;

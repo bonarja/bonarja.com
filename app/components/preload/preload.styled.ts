@@ -13,6 +13,8 @@ export const PreloadStyled = styled.div<{ $isLoading: boolean }>`
   top: 0;
   z-index: 3;
   user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   .Preload {
     &-Logo {
       animation-name: PreloadLogoIn;

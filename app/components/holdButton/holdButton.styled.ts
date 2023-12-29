@@ -6,6 +6,8 @@ export const HoldButtonStyled = styled.div<{
   $delay: number
 }>`
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   user-select: none;
   gap: 8px;
   .HoldButton {
@@ -16,9 +18,9 @@ export const HoldButtonStyled = styled.div<{
       border-width: 3px;
       border-color: ${(p) => p.$colorCircle};
       border-radius: 50%;
-      display: grid;
-      place-items: center;
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
       &:after {
         content: "";
@@ -54,6 +56,7 @@ export const HoldButtonStyled = styled.div<{
     font-weight: bold;
     letter-spacing: 0.05em;
     font-size: 10px;
+    user-select: none;
   }
   @keyframes HoldButtonAnimation {
     0% {

@@ -2,6 +2,9 @@ import { MediaScreen } from "@/app/utils/mediaScreen"
 import styled from "styled-components"
 
 export const HeroStyled = styled.div<{ $finishVideo: boolean }>`
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   .Hero {
     &-Background {
       background-size: cover;

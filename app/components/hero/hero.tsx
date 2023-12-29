@@ -5,7 +5,6 @@ import { usePreload } from "@/app/providers/preload.provider"
 import { HeroStyled } from "./hero.styled"
 import { RESOURCE } from "@/app/utils/resources"
 import { useCallback, useRef, useState } from "react"
-import { Header } from "../header/header"
 import { HeroLayer1 } from "./heroLayer1"
 import { HeroLayer2 } from "./heroLayer2"
 import { HeroLayer3 } from "./heroLayer3"
@@ -36,6 +35,7 @@ export const Hero = () => {
             src={getResource(RESOURCE.videoIntro)}
             autoPlay
             onEnded={onEndedVideo}
+            playsInline
           />
         </div>
       )}

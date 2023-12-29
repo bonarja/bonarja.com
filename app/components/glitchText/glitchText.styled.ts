@@ -33,7 +33,8 @@ export const GlitchTextStyled = styled.div<{
     }
     &-Line {
       background-color: ${(props) => props.$colorLine};
-      transform: translateX(101%);
+      position: absolute;
+      left: 101%;
       animation-delay: ${(props) => props.$delay}ms;
       animation-duration: 800ms;
       animation-fill-mode: forwards;
@@ -153,10 +154,10 @@ export const GlitchTextStyled = styled.div<{
   }
   @keyframes GlitchText-Line {
     from {
-      transform: translateX(101%);
+      left: 101%;
     }
     to {
-      transform: translateX(-101%);
+      left: -101%;
     }
   }
 `

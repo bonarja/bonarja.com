@@ -12,7 +12,7 @@ export const HeroLayer2 = ({ onChange }: HeroLayerProps) => {
         className="Hero-BackgroundVideo cover"
         style={{ opacity: .6 }}
       >
-        <video src="./static/coffee2.mp4" autoPlay muted loop/>
+        <video src="./static/coffee2.mp4" autoPlay muted playsInline loop/>
       </div>
       <div className="Hero-Content cover center">
         <img
@@ -24,7 +24,6 @@ export const HeroLayer2 = ({ onChange }: HeroLayerProps) => {
         <div className="Hero-Text center">
           <GlitchText
             text="the secret"
-            // colorText="#ad4b55ad"
             colorText="#be8d81cc"
             colorLine="#be8d81"
             fontSize={4}
