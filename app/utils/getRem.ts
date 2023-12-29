@@ -1,0 +1,1 @@
+export const getRem = (value: number) => `${value * 0.0625}rem` 
