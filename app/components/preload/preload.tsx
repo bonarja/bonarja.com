@@ -3,7 +3,7 @@
 import { GlitchImage } from "react-glitch-image"
 import { PreloadStyled } from "./preload.styled"
 import { Terminal } from "../terminal/terminal"
-import { ComponentRef, useCallback, useEffect, useRef } from "react"
+import { ComponentRef, useCallback, useEffect, useMemo, useRef } from "react"
 import { usePreload } from "@/app/providers/preload.provider"
 import { RESOURCE, getResources } from "@/app/utils/resources"
 import { Loader } from "../loader/loader"
@@ -22,6 +22,12 @@ export const Preload = () => {
   }, [])
 
   const { isLoading, done } = usePreload({ onLoad: onLoadResource })
+  const customFilter = useMemo(() => {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+    return isSafari
+      ? "invert(20%) sepia() saturate(300%) hue-rotate(calc($150deg + 150deg)) contrast(2)"
+      : "invert(20%) sepia() saturate(1200%) hue-rotate(calc($150deg + 150deg)) contrast(2)"
+  }, [])
 
   return (
     <PreloadStyled className="Preload cover" $isLoading={isLoading}>
@@ -29,14 +35,16 @@ export const Preload = () => {
         <GlitchImage
           splitSize={4}
           opacity={0.5}
-          customFilter="invert(20%) sepia() saturate(100000%) hue-rotate(calc($150deg + 150deg)) contrast(2)"
+          customFilter={customFilter}
           width={10}
           brightness={1}
           image="./static/logo.png"
           animationInterval={2500}
         />
       </div>
-      <button className="Preload-Button" onClick={done}>ENTER</button>
+      <button className="Preload-Button" onClick={done}>
+        ENTER
+      </button>
       <div className="Preload-Terminal">
         <Terminal
           ref={terminalRef}
@@ -44,7 +52,7 @@ export const Preload = () => {
           useDelay={false}
         />
       </div>
-      {isLoading && <Loader className="Preload-Loader"/>}
+      {isLoading && <Loader className="Preload-Loader" />}
     </PreloadStyled>
   )
 }
