@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef } from "react"
 import { GlitchTextStyled } from "./glitchText.styled"
-import { useIsclient } from "@/app/hooks/useIsClient"
 import { getRandomText } from "./randomText"
 import { usePreload } from "@/app/providers/preload.provider"
+import { useNavigator } from "@/app/providers/navigator.provider"
 
 type GlitchTextProps = {
   text: string
@@ -33,7 +33,7 @@ export const GlitchText = ({
   const letters = useRef<string>("")
   const timer = useRef<NodeJS.Timeout>()
   const timer2 = useRef<NodeJS.Timeout>()
-  const { isClient } = useIsclient()
+  const { isClient } = useNavigator()
   const getPStyle = useCallback((index: number) => {
     return {
       top: `-${100 * index}%`,
@@ -96,7 +96,7 @@ export const GlitchText = ({
       </div>
       <p
         style={{
-          ...(3 > 2 && { visibility: "hidden" }),
+          ...(isClient && { visibility: "hidden" }),
         }}
       >
         {text}

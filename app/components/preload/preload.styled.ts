@@ -41,7 +41,7 @@ export const PreloadStyled = styled.div<{ $isLoading: boolean }>`
       border-width: 2px;
       user-select: none;
       cursor: pointer;
-      border-color: #f1986a;
+      border-color: #6a908d;
       position: relative;
       overflow: hidden;
       animation-fill-mode: forwards;
@@ -56,7 +56,7 @@ export const PreloadStyled = styled.div<{ $isLoading: boolean }>`
         top: 0;
         height: 100%;
         width: 0;
-        background-color: #f1986a;
+        background-color: #6a908d;
         z-index: -1;
         transform: skewX(16deg);
         transition: all ease 200ms;

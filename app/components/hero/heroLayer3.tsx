@@ -17,7 +17,7 @@ export const HeroLayer3 = ({ onChange }: HeroLayerProps) => {
           className="Hero-Content-Logo"
           src="./static/logo.png"
           alt="bonarja logo"
-          style={{ filter: "brightness(0.4) sepia(1) hue-rotate(304deg) saturate(1.4)" }}
+          style={{ filter: "brightness(0.34) sepia(1) hue-rotate(303deg) saturate(2.5)" }}
         />
         <div className="Hero-Text center">
           <GlitchText

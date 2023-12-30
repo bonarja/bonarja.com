@@ -5,9 +5,8 @@ import { PreloadStyled } from "./preload.styled"
 import { Terminal } from "../terminal/terminal"
 import { ComponentRef, useCallback, useEffect, useMemo, useRef } from "react"
 import { usePreload } from "@/app/providers/preload.provider"
-import { RESOURCE, getResources } from "@/app/utils/resources"
+import { RESOURCE } from "@/app/utils/resources"
 import { Loader } from "../loader/loader"
-import { HoldButton } from "../holdButton/holdButton"
 
 export const Preload = () => {
   const terminalRef = useRef<ComponentRef<typeof Terminal>>(null)

@@ -1,7 +1,7 @@
 import { MediaScreen } from "@/app/utils/mediaScreen"
 import styled from "styled-components"
 
-export const HeroStyled = styled.div<{ $finishVideo: boolean }>`
+export const HeroStyled = styled.div<{ $finishVideo: boolean; $isMobile: boolean }>`
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -24,6 +24,7 @@ export const HeroStyled = styled.div<{ $finishVideo: boolean }>`
       overflow: hidden;
       left: 0;
       top: 0;
+      background-color: #252832;
     }
     &-BackgroundVideo {
       position: absolute;
@@ -44,6 +45,7 @@ export const HeroStyled = styled.div<{ $finishVideo: boolean }>`
     }
     &-Text {
       flex-direction: column;
+      ${p => p.$isMobile && "pointer-events: none"};
     }
   }
   .HoldButton {
