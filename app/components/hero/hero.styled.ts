@@ -24,6 +24,7 @@ export const HeroStyled = styled.div<{ $finishVideo: boolean; $isMobile: boolean
       overflow: hidden;
       left: 0;
       top: 0;
+      background-color: #252832;
     }
     &-BackgroundVideo {
       position: absolute;
