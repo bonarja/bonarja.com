@@ -43,7 +43,10 @@ export const Hero = () => {
       $isMobile={isMobile}
     >
       {isDone && !isFinishVideo && (
-        <div className="Hero-Video cover">
+        <div
+          className="Hero-Video cover"
+          style={{ backgroundColor: "#252832" }}
+        >
           <video
             src={getResource(RESOURCE.videoIntro)}
             autoPlay

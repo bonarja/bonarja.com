@@ -44,7 +44,7 @@ const NavigatorProvider = ({ children }: { children: ReactElement }) => {
 
   const vibrate = useCallback(() => {
     if (typeof navigator === "undefined") return
-    navigator.vibrate && navigator.vibrate(50)
+    navigator.vibrate && navigator.vibrate(100)
   }, [])
 
   const ctx = useMemo<NavigatorProps>(
