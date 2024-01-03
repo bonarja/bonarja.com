@@ -1,3 +1,4 @@
+import { MediaScreen } from "@/app/utils/mediaScreen"
 import styled from "styled-components"
 
 export const HoldButtonStyled = styled.div<{
@@ -10,6 +11,10 @@ export const HoldButtonStyled = styled.div<{
   -webkit-user-select: none;
   user-select: none;
   gap: 8px;
+  -webkit-tap-highlight-color: transparent;
+  ${MediaScreen.mediumScreen} {
+    gap: 14px;
+  }
   .HoldButton {
     &-Button {
       width: 30px;
@@ -29,6 +34,15 @@ export const HoldButtonStyled = styled.div<{
         background-color: ${(p) => p.$colorCircle};
         border-radius: 50%;
         position: absolute;
+      }
+      ${MediaScreen.mediumScreen} {
+        width: 40px;
+        height: 40px;
+        border-width: 3px;
+        &:after {
+          width: 15px;
+          height: 15px;
+        }
       }
     }
     &-Animation:after {
@@ -55,8 +69,11 @@ export const HoldButtonStyled = styled.div<{
     margin: 0;
     font-weight: bold;
     letter-spacing: 0.05em;
-    font-size: 10px;
+    font-size: 12px;
     user-select: none;
+    ${MediaScreen.mediumScreen} {
+      font-size: 15px;
+    }
   }
   @keyframes HoldButtonAnimation {
     0% {
