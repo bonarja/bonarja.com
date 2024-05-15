@@ -1,10 +1,7 @@
-import { getRem } from "@/app/utils/getRem"
-import { MediaScreen } from "@/app/utils/mediaScreen"
-import styled from "styled-components"
-
-export const TerminalStyled = styled.div`
-  width: ${getRem(300)};
-  height: ${getRem(200)};
+@import "../../utils/utils.scss";
+.Terminal {
+  width: getRem(300);
+  height: getRem(200);
   padding: 20px;
   color: #b9b9b9;
   display: flex;
@@ -31,12 +28,12 @@ export const TerminalStyled = styled.div`
       bottom: 2px;
     }
   }
-  ${MediaScreen.mobile} {
+  @include mobile() {
     width: 100%;
   }
   @keyframes TerminalLineIn {
     from {
-      opacity: .3;
+      opacity: 0.3;
       transform: translateX(-12px);
     }
     to {
@@ -44,4 +41,4 @@ export const TerminalStyled = styled.div`
       transform: translateY(0);
     }
   }
-`
+}

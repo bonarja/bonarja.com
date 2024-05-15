@@ -1,7 +1,6 @@
 "use client"
 import { Inter } from "next/font/google"
 import "./globals.scss"
-import StyledComponentsRegistry from "./lib/registry"
 import { PreloadProvider } from "./providers/preload.provider"
 import { NavigatorProvider } from "./providers/navigator.provider"
 
@@ -19,12 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <title>Bonarja</title>
+      <title>Bonarja 🅱</title>
       <body className={inter.className}>
         <NavigatorProvider>
-          <PreloadProvider>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-          </PreloadProvider>
+          <PreloadProvider>{children}</PreloadProvider>
         </NavigatorProvider>
       </body>
     </html>

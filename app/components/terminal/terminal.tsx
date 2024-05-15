@@ -1,8 +1,7 @@
 /* eslint-disable react/display-name */
 "use client"
-
+import "./terminal.scss"
 import { useState, forwardRef, useImperativeHandle, useRef, useCallback, useMemo } from "react"
-import { TerminalStyled } from "./terminal.styled"
 
 type TerminalHandler = {
   add: (value: string) => void
@@ -26,10 +25,10 @@ export const Terminal = forwardRef<TerminalHandler, TerminalProps>(({ useDelay =
     }
   }))
 
-  return <TerminalStyled className="Terminal">
+  return <div className="Terminal">
     {messages.current.map((x, index) => {
       const isLast = index === length - 1
       return <p key={index} className={isLast ? "Terminal-LastLine" : ""}> {x}</p>
     })}
-  </TerminalStyled>
+  </div>
 })

@@ -1,8 +1,9 @@
+import "./glitchText.scss"
 import { useCallback, useEffect, useRef } from "react"
-import { GlitchTextStyled } from "./glitchText.styled"
 import { getRandomText } from "./randomText"
 import { usePreload } from "@/app/providers/preload.provider"
 import { useNavigator } from "@/app/providers/navigator.provider"
+import { setVars } from "@/app/utils/setVars"
 
 type GlitchTextProps = {
   text: string
@@ -76,23 +77,33 @@ export const GlitchText = ({
   }, [isClient, text, animationTime, delay, isFinishVideo])
 
   return (
-    <GlitchTextStyled
+    <div
       className="GlitchText"
-      $fontSize={fontSize}
-      $splitSize={splitSize}
-      $variation={0.05}
-      $colorLine={colorLine}
-      $active={isFinishVideo}
-      $delay={delay}
-      style={{
-        ...style,
-        ...(left && { marginLeft: `${left}rem` }),
-        ...(top && { marginTop: `${top}rem` }),
-      }}
-      $colorText={colorText}
+      style={
+        {
+          ...style,
+          ...(left && { marginLeft: `${left}rem` }),
+          ...(top && { marginTop: `${top}rem` }),
+          ...setVars({
+            GlitchText_FontSize: fontSize + "rem",
+            GlitchText_ColorText: colorText,
+            GlitchText_ColorLine: colorLine,
+            GlitchText_Delay: delay + "ms",
+            GlitchText_SplitSize: splitSize,
+            GlitchText_Variation: 0.05 + "rem",
+          }),
+        } as never
+      }
     >
       <div className="GlitchText-LineWrap cover">
-        {isClient && <div className="GlitchText-Line cover"></div>}
+        {isClient && (
+          <div
+            className="GlitchText-Line cover"
+            style={{
+              animationName: isFinishVideo ? "GlitchText-Line" : "none",
+            }}
+          ></div>
+        )}
       </div>
       <p
         style={{
@@ -112,6 +123,6 @@ export const GlitchText = ({
               </div>
             ))}
       </div>
-    </GlitchTextStyled>
+    </div>
   )
 }

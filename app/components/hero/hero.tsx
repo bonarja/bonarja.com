@@ -1,14 +1,15 @@
-/* eslint-disable @next/next/no-img-element */
 "use client"
+/* eslint-disable @next/next/no-img-element */
 
 import { usePreload } from "@/app/providers/preload.provider"
-import { HeroStyled } from "./hero.styled"
 import { RESOURCE } from "@/app/utils/resources"
-import { ReactEventHandler, useCallback, useRef, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 import { HeroLayer1 } from "./heroLayer1"
 import { HeroLayer2 } from "./heroLayer2"
 import { HeroLayer3 } from "./heroLayer3"
 import { useNavigator } from "@/app/providers/navigator.provider"
+import "./hero.scss"
+import { setVars } from "@/app/utils/setVars"
 
 export const Hero = () => {
   const { isMobile } = useNavigator()
@@ -37,10 +38,9 @@ export const Hero = () => {
   )
 
   return (
-    <HeroStyled
+    <div
       className="Hero cover"
-      $finishVideo={isFinishVideo}
-      $isMobile={isMobile}
+      style={setVars({ Hero_PointerEven: isMobile ? "none" : "unset" })}
     >
       {isDone && !isFinishVideo && (
         <div className="Hero-Video cover">
@@ -63,10 +63,16 @@ export const Hero = () => {
       )}
 
       <div className="Hero-Content cover center">
-        {layer === 1 && <HeroLayer1 onChange={changeLayer} />}
-        {layer === 2 && <HeroLayer2 onChange={changeLayer} />}
-        {layer === 3 && <HeroLayer3 onChange={changeLayer} />}
+        {layer === 1 && (
+          <HeroLayer1 isFinishVideo={isFinishVideo} onChange={changeLayer} />
+        )}
+        {layer === 2 && (
+          <HeroLayer2 isFinishVideo={isFinishVideo} onChange={changeLayer} />
+        )}
+        {layer === 3 && (
+          <HeroLayer3 isFinishVideo={isFinishVideo} onChange={changeLayer} />
+        )}
       </div>
-    </HeroStyled>
+    </div>
   )
 }

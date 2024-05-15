@@ -1,8 +1,9 @@
-import { useLongPress } from "@/app/hooks/useLongPres"
-import { HoldButtonStyled } from "./holdButton.styled"
+import { useLongPress } from "@/app/hooks/useLongPress"
+import "./holdButton.scss"
 import cn from "classnames"
 import { useRef } from "react"
 import { useNavigator } from "@/app/providers/navigator.provider"
+import { setVars } from "@/app/utils/setVars"
 
 type HoldButtonProps = {
   colorText?: string
@@ -29,11 +30,13 @@ export const HoldButton = ({
   })
 
   return (
-    <HoldButtonStyled
+    <div
       className="HoldButton center"
-      $colorText={colorText}
-      $colorCircle={colorCircle}
-      $delay={delay}
+      style={setVars({
+        HoldButton_ColorText: colorText,
+        HoldButton_ColorCircle: colorCircle,
+        HoldButton_Delay: delay + "ms",
+      })}
       {...props}
     >
       <div className={buttonCN}></div>
@@ -41,6 +44,6 @@ export const HoldButton = ({
         <p>click</p>
         <p>and hold</p>
       </div>
-    </HoldButtonStyled>
+    </div>
   )
 }

@@ -1,0 +1,139 @@
+.GlitchText {
+  font-size: var(--GlitchText_FontSize);
+  position: relative;
+  p {
+    text-transform: uppercase;
+    margin: 0;
+    font-family: "Fira Mono", monospace;
+    color: white;
+    font-weight: bold;
+    color: var(--GlitchText_ColorText);
+    letter-spacing: 0.05em;
+  }
+  &-LineWrap {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  &-Line {
+    background-color: var(--GlitchText_ColorLine);
+    position: absolute;
+    left: 101%;
+    animation-delay: var(--GlitchText_Delay);
+    animation-duration: 800ms;
+    animation-fill-mode: forwards;
+  }
+  &-Wrap {
+    display: grid;
+    grid-template-rows: repeat(var(--GlitchText_SplitSize), 1fr);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &-Division {
+    overflow: hidden;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-name: GlitchText-Text;
+    animation-duration: 1ms;
+    animation-delay: calc(var(--GlitchText_Delay) + 250ms);
+    position: relative;
+    p {
+      position: absolute;
+      left: 0;
+      animation-iteration-count: infinite;
+      animation-duration: 150ms;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+  &:hover .GlitchText-Division > p {
+    animation-name: GlitchText-glitch2;
+  }
+  &:hover .GlitchText-Division:nth-child(1) > p {
+    animation-name: GlitchText-glitch1;
+  }
+  @keyframes GlitchText-glitch1 {
+    0% {
+      transform: translateX(calc(var(--GlitchText_Variation) * 1))
+        translateY(calc(var(--GlitchText_Variation) * 0.05));
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(calc(var(--GlitchText_Variation) * -3))
+        translateY(calc(var(--GlitchText_Variation) * -0.1));
+    }
+    40% {
+      transform: translateX(calc(var(--GlitchText_Variation) * 3))
+        translateY(calc(var(--GlitchText_Variation)* 0.05));
+    }
+    60% {
+      transform: translateX(calc(var(--GlitchText_Variation) * -1))
+        translateY(calc(var(--GlitchText_Variation) * 0.1));
+    }
+    74% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    80% {
+      transform: translateX(0) translateY(0);
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(calc(var(--GlitchText_Variation) * 0.35))
+        translateY(calc(var(--GlitchText_Variation) * -0.05));
+    }
+  }
+  @keyframes GlitchText-glitch2 {
+    0% {
+      transform: translateX(calc(var(--GlitchText_Variation) * -3));
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(calc(var(--GlitchText_Variation) * 2));
+    }
+    34% {
+      opacity: 1;
+    }
+    35% {
+      opacity: 0;
+    }
+    40% {
+      transform: translateX(0);
+    }
+    45% {
+      opacity: 1;
+    }
+    60% {
+      transform: translateX(calc(var(--GlitchText_Variation)* 3));
+    }
+    80% {
+      transform: translateX(calc(var(--GlitchText_Variation)* -3));
+    }
+    100% {
+      transform: translateX(calc(var(--GlitchText_Variation)* 3.2));
+    }
+  }
+  @keyframes GlitchText-Text {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes GlitchText-Line {
+    from {
+      left: 101%;
+    }
+    to {
+      left: -101%;
+    }
+  }
+}

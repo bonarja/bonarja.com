@@ -11,6 +11,9 @@ export default function Home() {
       {!isDone && <Preload />}
       <div className="Main cover">
         <Hero />
+        {/* <div className="scrollContent cover">
+
+        </div> */}
       </div>
     </>
   )

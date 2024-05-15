@@ -1,6 +1,6 @@
 {
   "name": "bonarja.com",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,17 +14,15 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-glitch-image": "^1.3.0",
-    "sass": "^1.69.5",
-    "styled-components": "^6.1.1"
+    "react-glitch-image": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/styled-components": "^5.1.34",
-    "eslint": "^8",
+    "eslint": "^9.2.0",
     "eslint-config-next": "14.0.4",
+    "sass": "^1.77.1",
     "typescript": "^5"
   }
 }

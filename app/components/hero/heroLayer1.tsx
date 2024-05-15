@@ -3,17 +3,20 @@ import { RESOURCE } from "@/app/utils/resources"
 import { GlitchText } from "../glitchText/glitchText"
 import { usePreload } from "@/app/providers/preload.provider"
 import { HoldButton } from "../holdButton/holdButton"
+import { useRef } from "react"
+// import { useScrollAnimation } from "@/app/hooks/useScrollAnimation"
 
 type HeroLayerProps = {
-    onChange:() => void
+  onChange: () => void
+  isFinishVideo: boolean
 }
-export const HeroLayer1 = ({ onChange }: HeroLayerProps) => {
-const { getResource } = usePreload()
+export const HeroLayer1 = ({ onChange, isFinishVideo }: HeroLayerProps) => {
+  const { getResource } = usePreload()  
   return (
     <>
       <div
         className="Hero-Background cover"
-        style={{ backgroundImage: `url(${getResource(RESOURCE.background)})` }}
+        style={{ backgroundImage: `url(${getResource(RESOURCE.background)})`, animationName: isFinishVideo ? "HeroBgIntro" : "none" }}
       ></div>
       <div className="Hero-Content cover center">
         <img

@@ -1,0 +1,14 @@
+@mixin mobile() {
+    @media (width <= 650px) {
+        @content;
+    }
+}
+@mixin mediumScreen() {
+    @media (width <= 1400px) {
+        @content;
+    }
+}
+@function getRem($size) {
+    $remSize: $size * 0.0625;
+    @return #{$remSize}rem;
+}

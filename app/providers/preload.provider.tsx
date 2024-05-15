@@ -1,5 +1,5 @@
 import {
-  ReactElement,
+  ReactNode,
   createContext,
   useCallback,
   useContext,
@@ -38,11 +38,11 @@ const usePreload = ({ onLoad }: UsePreloadProps = {}) => {
   return context
 }
 
-const PreloadProvider = ({ children }: { children: ReactElement }) => {
+const PreloadProvider = ({ children }: { children: ReactNode }) => {
   const [lastKey, setLastKey] = useState("")
   const [resources, setResources] = useState<Record<string, string>>({})
   const [isLoading, setIsLoading] = useState(true)
-  const [isDone, setDone] = useState(false)
+  const [isDone, setIsDone] = useState(false)
   const [isFinishVideo, setIsFinishVideo] = useState(false)
   const originalResources = useRef<Record<string, string>>()
   const PromiseAll = useCallback(function (
@@ -88,14 +88,16 @@ const PreloadProvider = ({ children }: { children: ReactElement }) => {
   )
 
   const existResources = useMemo(() => resources !== null, [resources])
-  const done = useCallback(() => setDone(true), [])
+  const done = useCallback(() => {
+    setIsDone(true)
+    const main: HTMLDivElement | null = document.querySelector(".Main")
+    main && (main.style.overflow = "auto")
+  }, [])
 
   const getResource = useCallback(
     (resource: RESOURCE) => {
       const originalResources = getResources()
-      return isLoading
-        ? originalResources[resource]
-        : resources[resource]
+      return isLoading ? originalResources[resource] : resources[resource]
     },
     [isLoading, resources]
   )
@@ -122,11 +124,23 @@ const PreloadProvider = ({ children }: { children: ReactElement }) => {
       finishVideo,
       isFinishVideo
     }),
-    [existResources, resources, lastKey, done, isDone, isLoading, getResource, finishVideo, isFinishVideo]
+    [
+      existResources,
+      resources,
+      lastKey,
+      done,
+      isDone,
+      isLoading,
+      getResource,
+      finishVideo,
+      isFinishVideo
+    ]
   )
 
   return (
-    <PreloadContext.Provider value={ctx}>{children}</PreloadContext.Provider>
+    <PreloadContext.Provider value={ctx}>
+      {children}
+    </PreloadContext.Provider>
   )
 }
 

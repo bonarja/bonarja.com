@@ -4,13 +4,14 @@ import { HoldButton } from "../holdButton/holdButton"
 
 type HeroLayerProps = {
     onChange:() => void
+    isFinishVideo: boolean
 }
-export const HeroLayer2 = ({ onChange }: HeroLayerProps) => {
+export const HeroLayer2 = ({ onChange, isFinishVideo }: HeroLayerProps) => {
   return (
     <>
       <div
         className="Hero-BackgroundVideo cover"
-        style={{ opacity: .6 }}
+        style={{ opacity: .6, animationName: isFinishVideo ? "HeroBgIntro" : "none" }}
       >
         <video src="./static/coffee2.mp4" autoPlay muted playsInline loop/>
       </div>

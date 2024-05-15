@@ -1,13 +1,12 @@
 "use client"
 
 import { GlitchImage } from "react-glitch-image"
-import { PreloadStyled } from "./preload.styled"
 import { Terminal } from "../terminal/terminal"
-import { ComponentRef, useCallback, useEffect, useMemo, useRef } from "react"
+import { ComponentRef, useCallback, useMemo, useRef } from "react"
 import { usePreload } from "@/app/providers/preload.provider"
 import { RESOURCE } from "@/app/utils/resources"
 import { Loader } from "../loader/loader"
-
+import "./preload.scss"
 export const Preload = () => {
   const terminalRef = useRef<ComponentRef<typeof Terminal>>(null)
 
@@ -32,7 +31,7 @@ export const Preload = () => {
   }, [])
 
   return (
-    <PreloadStyled className="Preload cover" $isLoading={isLoading}>
+    <div className="Preload cover">
       <div className="Preload-Logo">
         <GlitchImage
           splitSize={4}
@@ -42,9 +41,16 @@ export const Preload = () => {
           brightness={1}
           image="./static/logo.png"
           animationInterval={2500}
+          baseImageCssOnActiveFx={{
+            opacity: 0,
+          }}
         />
       </div>
-      <button className="Preload-Button" onClick={done}>
+      <button
+        className="Preload-Button"
+        style={{ animationName: isLoading ? "none" : "PreloadEnterIn" }}
+        onClick={done}
+      >
         ENTER
       </button>
       <div className="Preload-Terminal">
@@ -55,6 +61,6 @@ export const Preload = () => {
         />
       </div>
       {isLoading && <Loader className="Preload-Loader" />}
-    </PreloadStyled>
+    </div>
   )
 }

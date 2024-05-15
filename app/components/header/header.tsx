@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
-import { HeaderStyled } from "./header.styled"
-
+import "./header.scss"
 export const Header = () => {
   return (
-    <HeaderStyled className="Header center">
-    </HeaderStyled>
+    <header className="Header center">
+    </header>
   )
 }

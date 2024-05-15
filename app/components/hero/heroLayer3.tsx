@@ -4,13 +4,14 @@ import { HoldButton } from "../holdButton/holdButton"
 
 type HeroLayerProps = {
     onChange:() => void
+    isFinishVideo: boolean
 }
-export const HeroLayer3 = ({ onChange }: HeroLayerProps) => {
+export const HeroLayer3 = ({ onChange, isFinishVideo }: HeroLayerProps) => {
   return (
     <>
       <div
         className="Hero-Background cover"
-        style={{ backgroundImage: "url(./static/w2.jpg)" }}
+        style={{ backgroundImage: "url(./static/w2.jpg)", animationName: isFinishVideo ? "HeroBgIntro" : "none" }}
       ></div>
       <div className="Hero-Content cover center">
         <img
